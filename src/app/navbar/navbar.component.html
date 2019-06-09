@@ -1,0 +1,74 @@
+<div class="container-fluid bg-dark">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-inverse pull-xs-right">
+        <a class="navbar-brand" href="#">Github Search</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse text-right " id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/berylonyancha" target="_blank"><i class="fa fa-github" aria-hidden="true"></i>Github</a>
+            </li>
+          </ul>
+  
+  
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  <div class="jumbotron">
+    <form class="text-center">
+      <label for="search" class="sr-only">Search</label>
+      <input type="text" class="form-group mx-sm-3 mb-2" placeholder="Search Here" [(ngModel)]="username"
+        name="username" (keyup)="findProfile()">
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" (keyup)="findProfile()">Search</button>
+    </form>
+  </div>
+  
+  <div class="container">
+    <div *ngIf="profile">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          {{profile.name}} <span>{{profile.login}}</span>
+        </div>
+        <br><br>
+        <div class="">
+          <div class="row">
+            <div class="">
+  
+              <img src="{{profile.avatar_url}}" class="img- img-responsive" alt="Profile Picture">
+  
+            </div>
+                <p>
+                  <span class="label label-default">Followers: {{profile.followers}}.</span>
+                  <span class="label label-default"> Following: {{profile.following}}.</span>
+                  <span class="label label-default">Public Repositories: {{profile.public_repos}}.</span>
+                </p>
+                <p><a href="{{profile.html_url}}" target="_blank" class="btn btn-primary btn-sm">Go to Github profile</a></p>
+                <br>
+                <h3 class="panel-title">Repositories</h3>
+  
+  
+                <div class="row">
+                    
+                  <div class="col-md-4" *ngFor="let repo of repos">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">{{repo.name}}</h5>
+                          <p class="card-text">{{repo.description}}</p>
+                          <a href="{{repo.html_url}}" class="btn btn-primary">Check out Project</a>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+  
+  
+            </div>
+  
+          </div>
+  
