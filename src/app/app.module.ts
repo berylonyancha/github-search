@@ -2,21 +2,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileServiceComponent } from './navbar/navbar.component';
 import { ProfileService } from './profile.service';
-import { fromEventPattern } from 'rxjs';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    ProfileComponent
+    ProfileServiceComponent,
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ProfileService],
   bootstrap: [AppComponent]
