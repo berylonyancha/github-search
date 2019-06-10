@@ -6,6 +6,10 @@ import { ProfileServiceComponent } from './navbar/navbar.component';
 import { ProfileService } from './profile.service';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import {RouterModule, Routes} from '@angular/router'
+
+const routes:Routes=[
+]
 
 @NgModule({
   declarations: [
@@ -15,7 +19,8 @@ import {FormsModule} from '@angular/forms';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [ProfileService],
   bootstrap: [AppComponent]
