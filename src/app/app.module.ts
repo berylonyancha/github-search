@@ -6,7 +6,8 @@ import { ProfileServiceComponent } from './navbar/navbar.component';
 import { ProfileService } from './profile.service';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
-import {RouterModule, Routes} from '@angular/router'
+import {RouterModule, Routes} from '@angular/router';
+import { HighlightDirective } from './highlight.directive'
 
 const routes:Routes=[
 ]
@@ -15,6 +16,7 @@ const routes:Routes=[
   declarations: [
     AppComponent,
     ProfileServiceComponent,
+    HighlightDirective,
   ],
   imports: [
     BrowserModule,
