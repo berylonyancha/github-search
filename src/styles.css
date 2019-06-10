@@ -1,6 +1,6 @@
 
 @import "~bootstrap/dist/css/bootstrap.css";
-
 body{
- background: #1B2D2A;
-};
+  background: rgb(56, 56, 56);
+  color: white;
+}
